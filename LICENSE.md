@@ -1,6 +1,6 @@
 WKU License
 
-Copyright (c) [2024] [Amanuel Getachew]
+Copyright (c) 2024 Amanuel Getachew
 
 All rights reserved.
 
@@ -16,6 +16,6 @@ Permission to use this software is granted only under the following conditions:
 
 4. This license shall be governed by and construed in accordance with the laws of [Ethiopia /Wolkite University].
 
-[Amanuel Getachew]
-[Wolkite University ,Ethiopia]
-[amanuel.tamirat@wku.edu.et]
+Amanuel Getachew
+Wolkite University ,Ethiopia
+amanuel.tamirat@wku.edu.et
