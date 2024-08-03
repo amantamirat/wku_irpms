@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Logs
+logs
+*.log
+logs/
+
+# Next.js
+.next/
+out/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+
+
+
