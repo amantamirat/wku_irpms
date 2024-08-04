@@ -20,7 +20,6 @@ const LoginPage = () => {
     return (
         <div className={containerClassName}>
             <div className="flex flex-column align-items-center justify-content-center">
-                <img src={`/images/wku_logo.png`} alt="Sakai logo" className="mb-5 w-6rem flex-shrink-0" />
                 <div
                     style={{
                         borderRadius: '56px',
@@ -30,9 +29,14 @@ const LoginPage = () => {
                 >
                     <div className="w-full surface-card py-8 px-5 sm:px-8" style={{ borderRadius: '53px' }}>
                         <div className="text-center mb-5">
-                            <img src="/demo/images/login/avatar.png" alt="Image" height="50" className="mb-3" />
+                            <img src={`/images/wku_logo.png`} alt="Sakai logo" className="mb-5 w-6rem flex-shrink-0" />
                             <div className="text-900 text-3xl font-medium mb-3">Welcome, Back!</div>
-                            <span className="text-600 font-medium">Log in to continue</span>
+                            <span className="text-600 font-medium">Log in to continue</span>                            
+                        </div>
+
+                        <div className="text-center mb-5">
+                            <span className="text-600 font-medium line-height-3">Do not have an account?</span>
+                            <a  className="font-medium no-underline ml-2 text-right cursor-pointer" style={{ color: 'var(--primary-color)' }}>Create today!</a>
                         </div>
 
                         <div>
@@ -55,8 +59,9 @@ const LoginPage = () => {
                                     Forgot password?
                                 </a>
                             </div>
-                            <Button label="Sign In" className="w-full p-3 text-xl" onClick={() => router.push('/')}></Button>
+                            <Button label="Sign In" className="w-full p-3 text-xl" onClick={() => router.push('/')}></Button>                            
                         </div>
+                        
                     </div>
                 </div>
             </div>

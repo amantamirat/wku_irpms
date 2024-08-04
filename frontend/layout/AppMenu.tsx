@@ -17,13 +17,57 @@ const AppMenu = () => {
             items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
         },
         {
+            label: 'Applications',
+            items: [
+                {
+                    label: 'Concept Notes',
+                    icon: PrimeIcons.COMPASS                   
+                },
+                {
+                    label: 'Proposals',
+                    icon: PrimeIcons.BRIEFCASE                   
+                },
+                {
+                    label: 'Abstracts',
+                    icon: PrimeIcons.KEY                   
+                },
+                {
+                    label: 'Manuscripts',
+                    icon: PrimeIcons.BOOK                  
+                }]
+        },
+        {
+            label: 'Manage',
+            items: [
+                {
+                    label: 'Calendars',
+                    icon: PrimeIcons.CALENDAR                   
+                },
+                {
+                    label: 'Calls',
+                    icon: PrimeIcons.BELL                   
+                },
+                {
+                    label: 'Themes',
+                    icon: PrimeIcons.TAGS                   
+                }]
+        },
+        {
             label: 'Mantain',
             items: [
                 {
-                    label: 'Empty',
-                    icon: PrimeIcons.PRIME,
-                    to: '/pages/empty'
-                }]
+                    label: 'Colleges',
+                    icon: PrimeIcons.BUILDING                   
+                },
+                {
+                    label: 'Departments',
+                    icon: PrimeIcons.TABLE                   
+                },
+                {
+                    label: 'Instructors',
+                    icon: PrimeIcons.USERS                   
+                }
+            ]
         },
         {
             label: 'Prime Blocks',
