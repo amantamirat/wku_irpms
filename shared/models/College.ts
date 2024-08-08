@@ -1,6 +1,6 @@
 import { Office } from "./Office";
 
-export interface College extends Office{
+export interface ICollege extends Office{
     dean?: string;
     coordinator?: string;
     departments:string[];

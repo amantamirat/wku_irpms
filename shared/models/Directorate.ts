@@ -1,6 +1,6 @@
 import { Office } from "./Office";
 
-export interface Directorate extends Office{
+export interface IDirectorate extends Office{
     description:string;
     director?: string;
   }

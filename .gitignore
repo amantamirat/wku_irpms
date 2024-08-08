@@ -6,6 +6,9 @@ npm-debug.log
 yarn-error.log
 .env
 
+# scripts
+scripts/
+
 # Logs
 logs
 *.log

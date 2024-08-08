@@ -1,6 +1,5 @@
-import { MyModel } from "./MyModel";
+import {MyModel} from './MyModel';
 
-// /shared/models/User.ts
 export enum Role {
   ADMIN = 'ADMIN',
   INSTRUCTOR = 'INSTRUCTOR',
@@ -13,10 +12,14 @@ export enum Role {
   STUDENT = 'STUDENT',
 }
 
-export interface User extends MyModel {
+export interface IUser extends MyModel {
+  email: string;
   username: string;
   password: string;
   activated: boolean;
-  lastSeen?:string;
   roles: Role[];
+}
+
+export const validateUser = (user: IUser): boolean => {
+  return !!user.username && !!user.password && !!user.roles;
 }
