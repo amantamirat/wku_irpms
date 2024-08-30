@@ -5,3 +5,5 @@ export interface ICollege extends Office{
     coordinator?: string;
     departments:string[];
   }
+
+  //export tostring here implement

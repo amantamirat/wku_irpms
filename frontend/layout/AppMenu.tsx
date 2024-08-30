@@ -57,7 +57,8 @@ const AppMenu = () => {
             items: [
                 {
                     label: 'Colleges',
-                    icon: PrimeIcons.BUILDING                   
+                    icon: PrimeIcons.BUILDING,
+                    to: '/pages/colleges'                   
                 },
                 {
                     label: 'Departments',
@@ -129,7 +130,7 @@ const AppMenu = () => {
                 {
                     label: 'View Source',
                     icon: 'pi pi-fw pi-search',
-                    url: 'https://github.com/primefaces/sakai-react',
+                    url: 'https://github.com/amantamirat/wku_irpms',
                     target: '_blank'
                 }
             ]
