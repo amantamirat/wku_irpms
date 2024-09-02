@@ -10,14 +10,14 @@ import { Toolbar } from "primereact/toolbar";
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 
-interface MyDataTableProps {
+interface MyDataManagerProps {
     apiurl?: string;
     header: string;
     columns: any[];
     onSelectionChange?: (item: MyModel | null) => void;
 }
 
-const MyDataTable = (props: MyDataTableProps) => {
+const MyDataManager = (props: MyDataManagerProps) => {
 
     const toast = useRef<Toast>(null);
     const dt = useRef<DataTable<any>>(null);
@@ -185,4 +185,4 @@ const MyDataTable = (props: MyDataTableProps) => {
     );
 };
 
-export default MyDataTable;
+export default MyDataManager;

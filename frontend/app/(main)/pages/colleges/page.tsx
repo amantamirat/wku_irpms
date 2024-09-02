@@ -1,5 +1,5 @@
 'use client';
-import MyDataTable from "@/components/MyDataTable";
+import MyDataManager from "@/components/MyDataManager";
 import { ICollege } from '@shared/models/College';
 
 const columns = [
@@ -9,7 +9,7 @@ const columns = [
 const CollegePage = () => {
     return (
         <div className="grid">
-            <MyDataTable
+            <MyDataManager
                 header="Colleges"
                 columns={columns}
             />
