@@ -6,7 +6,7 @@ const router = Router();
 router.get('/', async (req, res) => {
     try {
         const colleges = await College.find();
-        res.status(200).json(colleges);
+        res.status(200).json({ data: colleges });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
     }

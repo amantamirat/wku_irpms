@@ -17,7 +17,7 @@ interface MyDataManagerProps<T extends MyModel> {
     columns: any[];
     selectedItem: T | null;
     onSelectionChange: (item: T | null) => void;
-    saveDialogContent: JSX.Element;    
+    saveDialogContent: JSX.Element;
 }
 
 const MyDataManager = <T extends MyModel>(props: MyDataManagerProps<T>) => {
@@ -35,17 +35,23 @@ const MyDataManager = <T extends MyModel>(props: MyDataManagerProps<T>) => {
     const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
-        MyService.getItems<T>(props.apiurl).then((data) => {
-            setData(data);
-            setLoading(false);
-        });
+        MyService.getItems<T>(props.apiurl)
+            .then((data) => {
+                //console.log("Received data:", data);
+                setData(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
         initFilters();
-    });
+    }, [props.apiurl]);
 
     const saveItem = () => { }
     const deleteItem = () => { }
 
     const displayNewDialog = () => {
+        props.onSelectionChange(null);
         setEdit(false);
         setSubmitted(false);
         setShowSaveDialog(true);
@@ -99,8 +105,8 @@ const MyDataManager = <T extends MyModel>(props: MyDataManagerProps<T>) => {
 
     const onItemSelected = (e: any) => {
         const item = e.value as T;
-       //setSelectedItem(item);
-       props.onSelectionChange(item)
+        //setSelectedItem(item);
+        props.onSelectionChange(item)
     };
 
     const initFilters = () => {

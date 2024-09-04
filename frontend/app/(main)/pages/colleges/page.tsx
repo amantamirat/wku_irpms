@@ -38,7 +38,7 @@ const CollegePage = () => {
     return (
         <div className="grid">
             <MyDataManager<ICollege>
-                apiurl="localhost:4000/api/collges"
+                apiurl="http://localhost:4000/api/colleges"
                 header="Colleges"
                 columns={columns}
                 saveDialogContent={saveDialogContent}

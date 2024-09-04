@@ -7,7 +7,7 @@ yarn-error.log
 .env
 
 # scripts
-scripts/
+# test_scripts/
 
 # Logs
 logs
