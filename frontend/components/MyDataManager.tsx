@@ -1,3 +1,4 @@
+import { MyService } from "@/services/MyService";
 import { MyModel } from "@shared/models/MyModel";
 import { FilterMatchMode } from "primereact/api";
 import { Button } from "primereact/button";
@@ -10,33 +11,35 @@ import { Toolbar } from "primereact/toolbar";
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 
-interface MyDataManagerProps {
-    apiurl?: string;
+interface MyDataManagerProps<T extends MyModel> {
+    apiurl: string;
     header: string;
     columns: any[];
-    onSelectionChange?: (item: MyModel | null) => void;
+    selectedItem: T | null;
+    onSelectionChange: (item: T | null) => void;
+    saveDialogContent: JSX.Element;    
 }
 
-const MyDataManager = (props: MyDataManagerProps) => {
+const MyDataManager = <T extends MyModel>(props: MyDataManagerProps<T>) => {
 
     const toast = useRef<Toast>(null);
     const dt = useRef<DataTable<any>>(null);
     const [globalFilter, setGlobalFilter] = useState('');
     const [filters, setFilters] = useState<DataTableFilterMeta>({});
     const [loading, setLoading] = useState(true);
-    const [data, setData] = useState<any[]>([]);
-    const [selectedItem, setSelectedItem] = useState<MyModel | null>(null);
+    const [data, setData] = useState<T[]>([]);
+    //const [selectedItem, setSelectedItem] = useState<MyModel | null>(null);
     const [showSaveDialog, setShowSaveDialog] = useState(false);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [edit, setEdit] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
-        /*dataService().then((data) => {
+        MyService.getItems<T>(props.apiurl).then((data) => {
             setData(data);
             setLoading(false);
-        });*/
-        //initFilters();
+        });
+        initFilters();
     });
 
     const saveItem = () => { }
@@ -61,8 +64,9 @@ const MyDataManager = (props: MyDataManagerProps) => {
         </>
     );
 
-    const displayEditDialog = (item: MyModel) => {
-        setSelectedItem(item);
+    const displayEditDialog = (item: T) => {
+        //setSelectedItem(item);
+        props.onSelectionChange(item)
         setEdit(true);
         setShowSaveDialog(true);
     };
@@ -78,12 +82,13 @@ const MyDataManager = (props: MyDataManagerProps) => {
         </>
     );
 
-    const displayDeleteDialog = (item: MyModel) => {
-        setSelectedItem(item);
+    const displayDeleteDialog = (item: T) => {
+        //setSelectedItem(item);
+        props.onSelectionChange(item)
         setShowDeleteDialog(true);
     };
 
-    const actionBodyTemplate = (rowData: MyModel) => {
+    const actionBodyTemplate = (rowData: T) => {
         return (
             <>
                 <Button icon="pi pi-pencil" rounded severity="success" className="mr-2" onClick={() => displayEditDialog(rowData)} />
@@ -93,8 +98,9 @@ const MyDataManager = (props: MyDataManagerProps) => {
     };
 
     const onItemSelected = (e: any) => {
-        const item = e.value as MyModel;
-        setSelectedItem(item);
+        const item = e.value as T;
+       //setSelectedItem(item);
+       props.onSelectionChange(item)
     };
 
     const initFilters = () => {
@@ -141,7 +147,7 @@ const MyDataManager = (props: MyDataManagerProps) => {
                     ref={dt}
                     value={data}
                     dataKey="_id"
-                    selection={selectedItem}
+                    selection={props.selectedItem}
                     selectionMode="single"
                     onSelectionChange={onItemSelected}
                     scrollable
@@ -167,13 +173,14 @@ const MyDataManager = (props: MyDataManagerProps) => {
                     <Column body={actionBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
                 </DataTable>
                 <Dialog visible={showSaveDialog} style={{ width: '450px' }} header={edit ? "Edit Details" : "Create New"} modal className="p-fluid" footer={saveDialogFooter} onHide={hideSaveDialog}>
+                    {props.saveDialogContent}
                 </Dialog>
                 <Dialog visible={showDeleteDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteDialogFooter} onHide={hideDeleteDialog}>
                     <div className="flex align-items-center justify-content-center">
                         <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                        {selectedItem && (
+                        {props.selectedItem && (
                             <span>
-                                Are you sure you want to delete <b>{selectedItem._id}</b>?
+                                Are you sure you want to delete <b>{props.selectedItem._id}</b>?
                             </span>
                         )}
                     </div>
