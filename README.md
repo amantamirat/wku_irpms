@@ -1,5 +1,11 @@
 ﻿# Wolkite University Institutional Research and Project Managment System
 This is a research and project managment software system suitable for the Research and Community Vice President Office of Wolkite University (Ethiopian Universities). The project started by [Wolkite Univesity](https://www.wku.edu.et) in 2024.
+Institutional Research and Project Management (IRPM) is used to electronically:
+- Create, route, and approve Proposal Approval Forms (PAF) to submit funding proposals to sponsors, including Grants.gov
+- Route an unfunded agreement (UFA) for processing (e.g., Non-Disclosure Agreement, Material Transfer Agreement, etc.)
+- Create and route Clinical Trial Routing Forms (CTRF)
+- Create, route, and approve Awards (AWD)
+
 
 ## Required Tools
 For system develoment: download and install Nodejs and MongoDB
