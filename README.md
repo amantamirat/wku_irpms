@@ -3,8 +3,8 @@ This is a research and project managment software system suitable for the Resear
 Institutional Research and Project Management (IRPM) is used to electronically:
 - Create, route, and approve Proposal Approval Forms (PAF) to submit funding proposals to sponsors, including Grants.gov
 - Route an unfunded agreement (UFA) for processing (e.g., Non-Disclosure Agreement, Material Transfer Agreement, etc.)
-- Create and route Clinical Trial Routing Forms (CTRF)
 - Create, route, and approve Awards (AWD)
+- The Data Set contains administrative and financial data on proposals and awards processed by the Office of Research and Sponsored Projects.
 
 
 ## Required Tools
