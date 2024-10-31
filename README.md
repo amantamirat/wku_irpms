@@ -81,6 +81,7 @@ npx ts-node testColleges.ts
 - Technology Transfer and University Industry Linkage Directorate,
 - Publication and Documentation Directorate
 - Indigenous Knowledge Directorate
+- STEM
 
 
 
