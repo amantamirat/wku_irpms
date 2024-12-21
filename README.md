@@ -20,12 +20,12 @@ net start MongoDB
 ## How to clone
 Install git on your windows or linux machine, and then configure your account credintials of your git and PAN, you may use these commands
 ```bash
-git config username="yourusername" 
+git config username "yourusername" 
 #or
-git config --global user.name="yourusername" 
-git config useremail="youremail"
+git config --global user.name "yourusername" 
+git config useremail "youremail"
 #or
-git config --global user.email="yourusername" 
+git config --global user.email "yourusername" 
 #then clone this repo 
 git clone https://github.com/amantamirat/wku_irpms.git
 # it will ask you to log in via browser or ask you to enter a password (PAN) for PAN use the one you recived.
